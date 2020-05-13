@@ -11,14 +11,13 @@ let notew;
 let note;
 
 let slider;
-let vol = 0;
 
 function setup() {
   const cnv = createCanvas(len * 60, 300);
   cnv.position(displayWidth / 2 - width / 2, 0);
   
   slider = createSlider(0, 1, 0.5);
-  
+  slider.position(10, 10);
   
   note = new p5.Envelope();
   note.setADSR(0, 0.3, 0.2, 0);
@@ -34,7 +33,7 @@ function setup() {
 function draw() {
   background(220);
   
-  vol = slider.value();
+  let vol = slider.value();
   note.setRange(vol, 0);
   
   notew.amp(note);

@@ -5,19 +5,45 @@
 
 // Global Variables-----------------------------------------------------------------------------
 const len = 21;
-const type = "sine";
+let type = "sine";
 
 let notew;
 let note;
 
 let slider;
+let vol = 0;
+let sineButton;
+let triangleButton;
+let sawtoothButton;
+let squareButton;
+let volp;
 
 function setup() {
   const cnv = createCanvas(len * 60, 300);
   cnv.position(displayWidth / 2 - width / 2, 0);
   
-  slider = createSlider(0, 1, 0.5);
-  slider.position(10, 10);
+  volp = createP("Volume");
+  volp.position(142, 10);
+  volp.style('color', '#fff');
+  
+  slider = createSlider(0, 1, 0.5, 0.01);
+  slider.position(100, 50);
+  
+  sineButton = createButton("Sine");
+  sineButton.position(145, 100);
+  sineButton.mousePressed(sineType);
+  
+  triangleButton = createButton("Triangle");
+  triangleButton.position(135, 150);
+  triangleButton.mousePressed(triangleType);
+  
+  sawtoothButton = createButton("Sawtooth");
+  sawtoothButton.position(130, 200);
+  sawtoothButton.mousePressed(sawtoothType);
+  
+  squareButton = createButton("Square");
+  squareButton.position(135, 250);
+  squareButton.mousePressed(squareType);
   
   note = new p5.Envelope();
   note.setADSR(0, 0.3, 0.2, 0);
@@ -26,17 +52,16 @@ function setup() {
   notew = new p5.Oscillator();
   notew.setType(type);
   notew.freq(130);
-  
-  
 }
 
 function draw() {
   background(220);
   
-  let vol = slider.value();
+  vol = slider.value();
   note.setRange(vol, 0);
   
   notew.amp(note);
+  notew.setType(type);
   drawKeys();
 }
 
@@ -360,4 +385,20 @@ function drawKeys() {
   text(";", 1136, 50);
   text("'", 1197, 50);
   pop();
+}
+
+function sineType() {
+  type = "sine";
+}
+
+function triangleType() {
+  type = "triangle";
+}
+
+function sawtoothType() {
+  type = "sawtooth";
+}
+
+function squareType() {
+  type = "square";
 }

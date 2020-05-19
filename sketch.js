@@ -1,7 +1,7 @@
 /*
-*Made By Ethan Knotts
-*Please Don't Steal My Code
-*/
+ *Made By Ethan Knotts
+ *Please Don't Steal My Code
+ */
 
 // Global Variables-----------------------------------------------------------------------------
 const len = 21;
@@ -10,45 +10,16 @@ let type = "sine";
 let notew;
 let note;
 
-let slider;
 let vol = 0;
-let sineButton;
-let triangleButton;
-let sawtoothButton;
-let squareButton;
-let volp;
 
 function setup() {
   const cnv = createCanvas(len * 60, 300);
-  cnv.position(displayWidth / 2 - width / 2, 0);
-  
-  volp = createP("Volume");
-  volp.position(142, 10);
-  volp.style('color', '#fff');
-  
-  slider = createSlider(0, 1, 0.5, 0.01);
-  slider.position(100, 50);
-  
-  sineButton = createButton("Sine");
-  sineButton.position(145, 100);
-  sineButton.mousePressed(sineType);
-  
-  triangleButton = createButton("Triangle");
-  triangleButton.position(135, 150);
-  triangleButton.mousePressed(triangleType);
-  
-  sawtoothButton = createButton("Sawtooth");
-  sawtoothButton.position(130, 200);
-  sawtoothButton.mousePressed(sawtoothType);
-  
-  squareButton = createButton("Square");
-  squareButton.position(135, 250);
-  squareButton.mousePressed(squareType);
-  
+  cnv.position(displayWidth / 2 - width / 2, 175);
+
   note = new p5.Envelope();
   note.setADSR(0, 0.3, 0.2, 0);
   note.setRange(vol, 0);
-  
+
   notew = new p5.Oscillator();
   notew.setType(type);
   notew.freq(130);
@@ -56,10 +27,9 @@ function setup() {
 
 function draw() {
   background(220);
-  
-  vol = slider.value();
+
   note.setRange(vol, 0);
-  
+
   notew.amp(note);
   notew.setType(type);
   drawKeys();
@@ -68,278 +38,208 @@ function draw() {
 function keyPressed() {
   // White Keys---------------------------------------------------------------------------------
   if (key == 'q') {
-    notew.freq(130);
-    notew.start();
-    note.play();
+    press(130);
   }
-  
+
   if (key == 'w') {
-    notew.freq(146);
-    notew.start();
-    note.play();
+    press(146);
   }
-  
+
   if (key == 'e') {
-    notew.freq(164);
-    notew.start();
-    note.play();
+    press(164);
   }
-  
+
   if (key == 'r') {
-    notew.freq(174);
-    notew.start();
-    note.play();
+    press(174);
   }
-  
+
   if (key == 't') {
-    notew.freq(196);
-    notew.start();
-    note.play();
+    press(196);
   }
-  
+
   if (key == 'y') {
-    notew.freq(220);
-    notew.start();
-    note.play();
+    press(220);
   }
-  
+
   if (key == 'u') {
-    notew.freq(246);
-    notew.start();
-    note.play();
+    press(246);
   }
-  
+
   if (key == 'i') {
-    notew.freq(261);
-    notew.start();
-    note.play();
+    press(261);
   }
-  
+
   if (key == 'o') {
-    notew.freq(293);
-    notew.start();
-    note.play();
+    press(293);
   }
-  
+
   if (key == 'p') {
-    notew.freq(329);
-    notew.start();
-    note.play();
+    press(329);
   }
-  
+
   if (key == 'z') {
-    notew.freq(349);
-    notew.start();
-    note.play();
+    press(349);
   }
-  
+
   if (key == 'x') {
-    notew.freq(391);
-    notew.start();
-    note.play();
+    press(391);
   }
-  
+
   if (key == 'c') {
-    notew.freq(440);
-    notew.start();
-    note.play();
+    press(440);
   }
-  
+
   if (key == 'v') {
-    notew.freq(493);
-    notew.start();
-    note.play();
+    press(493);
   }
-  
+
   if (key == 'b') {
-    notew.freq(523);
-    notew.start();
-    note.play();
+    press(523);
   }
-  
+
   if (key == 'n') {
-    notew.freq(587);
-    notew.start();
-    note.play();
+    press(587);
   }
-  
+
   if (key == 'm') {
-    notew.freq(659);
-    notew.start();
-    note.play();
+    press(659);
   }
-  
+
   if (key == ',') {
-    notew.freq(698);
-    notew.start();
-    note.play();
+    press(698);
   }
-  
+
   if (key == '.') {
-    notew.freq(783);
-    notew.start();
-    note.play();
+    press(783);
   }
-  
+
   if (key == '/') {
-    notew.freq(880);
-    notew.start();
-    note.play();
+    press(880);
   }
-  
+
   // Black Keys---------------------------------------------------------------------------------
   if (key == '2') {
-    notew.freq(138);
-    notew.start();
-    note.play();
+    press(138);
   }
-  
+
   if (key == '3') {
-    notew.freq(155);
-    notew.start();
-    note.play();
+    press(155);
   }
-  
+
   if (key == '5') {
-    notew.freq(185);
-    notew.start();
-    note.play();
+    press(185);
   }
-  
+
   if (key == '6') {
-    notew.freq(207);
-    notew.start();
-    note.play();
+    press(207);
   }
-  
+
   if (key == '7') {
-    notew.freq(233);
-    notew.start();
-    note.play();
+    press(233);
   }
-  
+
   if (key == '9') {
-    notew.freq(277);
-    notew.start();
-    note.play();
+    press(277);
   }
-  
+
   if (key == '0') {
-    notew.freq(311);
-    notew.start();
-    note.play();
+    press(311);
   }
-  
+
   if (key == 's') {
-    notew.freq(369.99);
-    notew.start();
-    note.play();
+    press(369.99);
   }
-  
+
   if (key == 'd') {
-    notew.freq(415);
-    notew.start();
-    note.play();
+    press(415);
   }
-  
+
   if (key == 'f') {
-    notew.freq(466);
-    notew.start();
-    note.play();
+    press(466);
   }
-  
+
   if (key == 'h') {
-    notew.freq(554);
-    notew.start();
-    note.play();
+    press(554);
   }
-  
+
   if (key == 'j') {
-    notew.freq(622);
-    notew.start();
-    note.play();
+    press(622);
   }
-  
+
   if (key == 'l') {
-    notew.freq(739.99);
-    notew.start();
-    note.play();
+    press(739.99);
   }
-  
+
   if (key == ';') {
-    notew.freq(830);
-    notew.start();
-    note.play();
+    press(830);
   }
-  
+
   if (key == '\'') {
-    notew.freq(932);
-    notew.start();
-    note.play();
+    press(932);
   }
 }
 
 function drawKeys() {
   let w = 60;
-  
+
   // White Keys---------------------------------------------------------------------------------
   push();
   fill(255);
   strokeWeight(4);
   stroke(0);
-  
+
   for (let i = 0; i < len; i++) {
     rect(i * w, 0, w, height);
   }
-  
+
   pop();
-  
+
   // Black Keys---------------------------------------------------------------------------------
   push();
-  fill(51);
+  fill(0);
   noStroke();
-  
+
   // C#-----------------------------------------------------------------------------------------
   for (let i = 1.5; i < 1.5 + (14 * 3); i += 14) {
     rect(30 * i, 0, w / 2, height / 2 + 25);
   }
-  
+
   // D#-----------------------------------------------------------------------------------------
   for (let i = 3.5; i < 3.5 + (14 * 3); i += 14) {
     rect(30 * i, 0, w / 2, height / 2 + 25);
   }
-  
+
   // F#-----------------------------------------------------------------------------------------
   for (let i = 7.5; i < 7.5 + (14 * 3); i += 14) {
     rect(30 * i, 0, w / 2, height / 2 + 25);
   }
-  
+
   // G#-----------------------------------------------------------------------------------------
-  for (let i = 9.5;i < 9.5 + (14 * 3); i += 14) {
+  for (let i = 9.5; i < 9.5 + (14 * 3); i += 14) {
     rect(30 * i, 0, w / 2, height / 2 + 25);
   }
-  
+
   // A#-----------------------------------------------------------------------------------------
-  for (let i = 11.5; i < 11.5 + (14 * 3) ; i += 14) {
+  for (let i = 11.5; i < 11.5 + (14 * 3); i += 14) {
     rect(30 * i, 0, w / 2, height / 2 + 25);
   }
-  
+
   pop();
-  
+
   // That Red Line------------------------------------------------------------------------------
   push();
   stroke(150, 0, 0);
   strokeWeight(8);
   line(0, 0, width, 0);
   pop();
-  
+
   // Text---------------------------------------------------------------------------------------
   push();
   fill(150, 0, 0);
   textSize(25);
   text("I", 440, 75);
   pop();
-  
+
   // White Key Text-----------------------------------------------------------------------------
   push();
   fill(0);
@@ -364,7 +264,7 @@ function drawKeys() {
   text(".", 1105, 75);
   text("/", 1165, 75);
   pop();
-  
+
   // Black Key Text-----------------------------------------------------------------------------
   push();
   fill(255);
@@ -385,6 +285,12 @@ function drawKeys() {
   text(";", 1136, 50);
   text("'", 1197, 50);
   pop();
+}
+
+function press(frequency) {
+  notew.freq(frequency);
+  notew.start();
+  note.play();
 }
 
 function sineType() {

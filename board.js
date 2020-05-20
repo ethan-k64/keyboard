@@ -34,6 +34,28 @@ let board = function(p) {
 
   p.draw = function() {
     vol = slider.value();
+
+    if (type == "sine") {
+      sineButton.style("background-color", "#528BFF");
+      triangleButton.style("background-color", "#FFF");
+      sawtoothButton.style("background-color", "#FFF");
+      squareButton.style("background-color", "#FFF");
+    } else if (type == "triangle") {
+      sineButton.style("background-color", "#FFF");
+      triangleButton.style("background-color", "#528BFF");
+      sawtoothButton.style("background-color", "#FFF");
+      squareButton.style("background-color", "#FFF");
+    } else if (type == "sawtooth") {
+      sineButton.style("background-color", "#FFF");
+      triangleButton.style("background-color", "#FFF");
+      sawtoothButton.style("background-color", "#528BFF");
+      squareButton.style("background-color", "#FFF");
+    } else if (type == "square") {
+      sineButton.style("background-color", "#FFF");
+      triangleButton.style("background-color", "#FFF");
+      sawtoothButton.style("background-color", "#FFF");
+      squareButton.style("background-color", "#528BFF");
+    }
   }
 
   function drawBoard() {

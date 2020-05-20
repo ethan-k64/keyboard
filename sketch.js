@@ -11,13 +11,14 @@ let notew;
 let note;
 
 let vol = 0;
+let keySustain;
 
 function setup() {
   const cnv = createCanvas(len * 60, 300);
   cnv.position(displayWidth / 2 - width / 2, 175);
 
   note = new p5.Envelope();
-  note.setADSR(0, 0.3, 0.2, 0);
+  note.setADSR(0, keySustain, 0.2, 0);
   note.setRange(vol, 0);
 
   notew = new p5.Oscillator();
@@ -29,6 +30,7 @@ function draw() {
   background(220);
 
   note.setRange(vol, 0);
+  note.setADSR(0, keySustain, 0.2, 0);
 
   notew.amp(note);
   notew.setType(type);

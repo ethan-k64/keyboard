@@ -1,6 +1,7 @@
 // Declare New Sketch
 let board = function(p) {
   let slider;
+  let sslider;
 
   let sineButton;
   let triangleButton;
@@ -34,27 +35,44 @@ let board = function(p) {
 
   p.draw = function() {
     vol = slider.value();
+    keySustain = sslider.value();
 
     if (type == "sine") {
       sineButton.style("background-color", "#528BFF");
+      sineButton.style("border-color", "#3632a8");
       triangleButton.style("background-color", "#FFF");
+      triangleButton.style("border-color", "#FFF");
       sawtoothButton.style("background-color", "#FFF");
+      sawtoothButton.style("border-color", "#FFF");
       squareButton.style("background-color", "#FFF");
+      squareButton.style("border-color", "#FFF");
     } else if (type == "triangle") {
       sineButton.style("background-color", "#FFF");
+      sineButton.style("border-color", "#FFF");
       triangleButton.style("background-color", "#528BFF");
+      triangleButton.style("border-color", "#3632a8");
       sawtoothButton.style("background-color", "#FFF");
+      sawtoothButton.style("border-color", "#FFF");
       squareButton.style("background-color", "#FFF");
+      squareButton.style("border-color", "#FFF");
     } else if (type == "sawtooth") {
       sineButton.style("background-color", "#FFF");
+      sineButton.style("border-color", "#FFF");
       triangleButton.style("background-color", "#FFF");
+      triangleButton.style("border-color", "#FFF");
       sawtoothButton.style("background-color", "#528BFF");
+      sawtoothButton.style("border-color", "#3632a8");
       squareButton.style("background-color", "#FFF");
+      squareButton.style("border-color", "#FFF");
     } else if (type == "square") {
       sineButton.style("background-color", "#FFF");
+      sineButton.style("border-color", "#FFF");
       triangleButton.style("background-color", "#FFF");
+      triangleButton.style("border-color", "#FFF");
       sawtoothButton.style("background-color", "#FFF");
+      sawtoothButton.style("border-color", "#FFF");
       squareButton.style("background-color", "#528BFF");
+      squareButton.style("border-color", "#3632a8");
     }
   }
 
@@ -65,6 +83,7 @@ let board = function(p) {
     p.translate(205, 25);
     p.text("Volume", 0, 0);
     p.text("Voice Select", 600, 0);
+    p.text("Sustain", 225, 0);
     p.pop();
 
     p.push();
@@ -75,6 +94,9 @@ let board = function(p) {
 
     slider = p.createSlider(0.01, 1, 0.5, 0.01);
     slider.position(500, 40);
+    
+    sslider = p.createSlider(0.15, 2, 0.3, 0.01);
+    sslider.position(730, 40);
   }
 }
 

@@ -32,6 +32,7 @@ function draw() {
 
   notew.amp(note);
   notew.setType(type);
+  
   drawKeys();
 }
 

@@ -36,6 +36,8 @@ function draw() {
   notew.setType(type);
   
   drawKeys();
+  
+  key = undefined;
 }
 
 function keyPressed() {

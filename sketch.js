@@ -1,7 +1,7 @@
 /*
- *Made By Ethan Knotts
- *Please Don't Steal My Code
- */
+Made By Ethan Knotts
+Please Don't Steal My Code
+*/
 
 // Global Variables-----------------------------------------------------------------------------
 const len = 21;
@@ -10,30 +10,89 @@ let type = "sine";
 let notew;
 let note;
 
+let qw;
+let q;
+let ww;
+let w;
+let ew;
+let e;
+let rw;
+let r;
+let tw;
+let t;
+let yw;
+let y;
+let uw;
+let u;
+let iw;
+let i;
+let ow;
+let o;
+let pw;
+let p;
+let zw;
+let z;
+let xw;
+let x;
+let cw;
+let c;
+let vw;
+let v;
+let bw;
+let b;
+let nw;
+let n;
+let mw;
+let m;
+let commaw;
+let comma;
+let periodw;
+let period;
+let slashw;
+let slash;
+
+let twow;
+let two;
+let threew;
+let three;
+let fivew;
+let five;
+let sixw;
+let six;
+let sevenw;
+let seven;
+let ninew;
+let nine;
+let zerow;
+let zero;
+let sw;
+let s;
+let dw;
+let d;
+let fw;
+let f;
+let hw;
+let h;
+let jw;
+let j;
+let lw;
+let l;
+let semicolinw;
+let semicolin;
+let quotew;
+let quote;
+
 let vol = 0;
 let keySustain;
 
 function setup() {
   const cnv = createCanvas(len * 60, 300);
   cnv.position(displayWidth / 2 - width / 2, 175);
-
-  note = new p5.Envelope();
-  note.setADSR(0, keySustain, 0.2, 0);
-  note.setRange(vol, 0);
-
-  notew = new p5.Oscillator();
-  notew.setType(type);
-  notew.freq(130);
 }
 
 function draw() {
   background(220);
 
-  note.setRange(vol, 0);
-  note.setADSR(0, keySustain, 0.2, 0);
-
-  notew.amp(note);
-  notew.setType(type);
   
   drawKeys();
   
@@ -43,144 +102,528 @@ function draw() {
 function keyPressed() {
   // White Keys---------------------------------------------------------------------------------
   if (key == 'q') {
-    press(130);
+    q = new p5.Envelope();
+    q.setADSR(0, keySustain, 0.2, 0);
+    q.setRange(vol, 0);
+    q.play();
+
+    qw = new p5.Oscillator();
+    qw.setType(type);
+    qw.start();
+    qw.freq(130);
+    qw.amp(q);
+
+    q.play();
   }
 
   if (key == 'w') {
-    press(146);
+    w = new p5.Envelope();
+    w.setADSR(0, keySustain, 0.2, 0);
+    w.setRange(vol, 0);
+    w.play();
+
+    ww = new p5.Oscillator();
+    ww.setType(type);
+    ww.start();
+    ww.freq(146);
+    ww.amp(w);
+
+    w.play();
   }
 
   if (key == 'e') {
-    press(164);
+    e = new p5.Envelope();
+    e.setADSR(0, keySustain, 0.2, 0);
+    e.setRange(vol, 0);
+    e.play();
+
+    ew = new p5.Oscillator();
+    ew.setType(type);
+    ew.start();
+    ew.freq(164);
+    ew.amp(e);
+
+    e.play();
   }
 
   if (key == 'r') {
-    press(174);
+    r = new p5.Envelope();
+    r.setADSR(0, keySustain, 0.2, 0);
+    r.setRange(vol, 0);
+    r.play();
+
+    rw = new p5.Oscillator();
+    rw.setType(type);
+    rw.start();
+    rw.freq(174);
+    rw.amp(r);
+
+    r.play();
   }
 
   if (key == 't') {
-    press(196);
+    t = new p5.Envelope();
+    t.setADSR(0, keySustain, 0.2, 0);
+    t.setRange(vol, 0);
+    t.play();
+
+    tw = new p5.Oscillator();
+    tw.setType(type);
+    tw.start();
+    tw.freq(196);
+    tw.amp(t);
+
+    t.play();
   }
 
   if (key == 'y') {
-    press(220);
+    y = new p5.Envelope();
+    y.setADSR(0, keySustain, 0.2, 0);
+    y.setRange(vol, 0);
+    y.play();
+
+    yw = new p5.Oscillator();
+    yw.setType(type);
+    yw.start();
+    yw.freq(220);
+    yw.amp(y);
+
+    y.play();
   }
 
   if (key == 'u') {
-    press(246);
+    u = new p5.Envelope();
+    u.setADSR(0, keySustain, 0.2, 0);
+    u.setRange(vol, 0);
+    u.play();
+
+    uw = new p5.Oscillator();
+    uw.setType(type);
+    uw.start();
+    uw.freq(246);
+    uw.amp(u);
+
+    u.play();
   }
 
   if (key == 'i') {
-    press(261);
+    i = new p5.Envelope();
+    i.setADSR(0, keySustain, 0.2, 0);
+    i.setRange(vol, 0);
+    i.play();
+
+    iw = new p5.Oscillator();
+    iw.setType(type);
+    iw.start();
+    iw.freq(261);
+    iw.amp(i);
+
+    i.play();
   }
 
   if (key == 'o') {
-    press(293);
+    o = new p5.Envelope();
+    o.setADSR(0, keySustain, 0.2, 0);
+    o.setRange(vol, 0);
+    o.play();
+
+    ow = new p5.Oscillator();
+    ow.setType(type);
+    ow.start();
+    ow.freq(293);
+    ow.amp(o);
+
+    o.play();
   }
 
   if (key == 'p') {
-    press(329);
+    p = new p5.Envelope();
+    p.setADSR(0, keySustain, 0.2, 0);
+    p.setRange(vol, 0);
+    p.play();
+
+    pw = new p5.Oscillator();
+    pw.setType(type);
+    pw.start();
+    pw.freq(329);
+    pw.amp(p);
+
+    p.play();
   }
 
   if (key == 'z') {
-    press(349);
+    z = new p5.Envelope();
+    z.setADSR(0, keySustain, 0.2, 0);
+    z.setRange(vol, 0);
+    z.play();
+
+    zw = new p5.Oscillator();
+    zw.setType(type);
+    zw.start();
+    zw.freq(349);
+    zw.amp(z);
+
+    z.play();
   }
 
   if (key == 'x') {
-    press(391);
+    x = new p5.Envelope();
+    x.setADSR(0, keySustain, 0.2, 0);
+    x.setRange(vol, 0);
+    x.play();
+
+    xw = new p5.Oscillator();
+    xw.setType(type);
+    xw.start();
+    xw.freq(391);
+    xw.amp(x);
+
+    x.play();
   }
 
   if (key == 'c') {
-    press(440);
+    c = new p5.Envelope();
+    c.setADSR(0, keySustain, 0.2, 0);
+    c.setRange(vol, 0);
+    c.play();
+
+    cw = new p5.Oscillator();
+    cw.setType(type);
+    cw.start();
+    cw.freq(440);
+    cw.amp(c);
+
+    c.play();
   }
 
   if (key == 'v') {
-    press(493);
+    v = new p5.Envelope();
+    v.setADSR(0, keySustain, 0.2, 0);
+    v.setRange(vol, 0);
+    v.play();
+
+    vw = new p5.Oscillator();
+    vw.setType(type);
+    vw.start();
+    vw.freq(493);
+    vw.amp(v);
+
+    v.play();
   }
 
   if (key == 'b') {
-    press(523);
+    b = new p5.Envelope();
+    b.setADSR(0, keySustain, 0.2, 0);
+    b.setRange(vol, 0);
+    b.play();
+
+    bw = new p5.Oscillator();
+    bw.setType(type);
+    bw.start();
+    bw.freq(523);
+    bw.amp(b);
+
+    b.play();
   }
 
   if (key == 'n') {
-    press(587);
+    n = new p5.Envelope();
+    n.setADSR(0, keySustain, 0.2, 0);
+    n.setRange(vol, 0);
+    n.play();
+
+    nw = new p5.Oscillator();
+    nw.setType(type);
+    nw.start();
+    nw.freq(587);
+    nw.amp(n);
+
+    n.play();
   }
 
   if (key == 'm') {
-    press(659);
+    m = new p5.Envelope();
+    m.setADSR(0, keySustain, 0.2, 0);
+    m.setRange(vol, 0);
+    m.play();
+
+    mw = new p5.Oscillator();
+    mw.setType(type);
+    mw.start();
+    mw.freq(659);
+    mw.amp(m);
+
+    m.play();
   }
 
   if (key == ',') {
-    press(698);
+    comma = new p5.Envelope();
+    comma.setADSR(0, keySustain, 0.2, 0);
+    comma.setRange(vol, 0);
+    comma.play();
+
+    commaw = new p5.Oscillator();
+    commaw.setType(type);
+    commaw.start();
+    commaw.freq(698);
+    commaw.amp(comma);
+
+    comma.play();
   }
 
   if (key == '.') {
-    press(783);
+    period = new p5.Envelope();
+    period.setADSR(0, keySustain, 0.2, 0);
+    period.setRange(vol, 0);
+    period.play();
+
+    periodw = new p5.Oscillator();
+    periodw.setType(type);
+    periodw.start();
+    periodw.freq(783);
+    periodw.amp(period);
+
+    period.play();
   }
 
   if (key == '/') {
-    press(880);
+    slash = new p5.Envelope();
+    slash.setADSR(0, keySustain, 0.2, 0);
+    slash.setRange(vol, 0);
+    slash.play();
+
+    slashw = new p5.Oscillator();
+    slashw.setType(type);
+    slashw.start();
+    slashw.freq(880);
+    slashw.amp(slash);
+
+    slash.play();
   }
 
-  // Black Keys---------------------------------------------------------------------------------
   if (key == '2') {
-    press(138);
+    two = new p5.Envelope();
+    two.setADSR(0, keySustain, 0.2, 0);
+    two.setRange(vol, 0);
+    two.play();
+
+    twow = new p5.Oscillator();
+    twow.setType(type);
+    twow.start();
+    twow.freq(138);
+    twow.amp(two);
+
+    two.play();
   }
 
   if (key == '3') {
-    press(155);
+    three = new p5.Envelope();
+    three.setADSR(0, keySustain, 0.2, 0);
+    three.setRange(vol, 0);
+    three.play();
+
+    threew = new p5.Oscillator();
+    threew.setType(type);
+    threew.start();
+    threew.freq(155);
+    threew.amp(three);
+
+    three.play();
   }
 
   if (key == '5') {
-    press(185);
+    five = new p5.Envelope();
+    five.setADSR(0, keySustain, 0.2, 0);
+    five.setRange(vol, 0);
+    five.play();
+
+    fivew = new p5.Oscillator();
+    fivew.setType(type);
+    fivew.start();
+    fivew.freq(185);
+    fivew.amp(five);
+
+    five.play();
   }
 
   if (key == '6') {
-    press(207);
+    six = new p5.Envelope();
+    six.setADSR(0, keySustain, 0.2, 0);
+    six.setRange(vol, 0);
+    six.play();
+
+    sixw = new p5.Oscillator();
+    sixw.setType(type);
+    sixw.start();
+    sixw.freq(207);
+    sixw.amp(six);
+
+    six.play();
   }
 
   if (key == '7') {
-    press(233);
+    seven = new p5.Envelope();
+    seven.setADSR(0, keySustain, 0.2, 0);
+    seven.setRange(vol, 0);
+    seven.play();
+
+    sevenw = new p5.Oscillator();
+    sevenw.setType(type);
+    sevenw.start();
+    sevenw.freq(233);
+    sevenw.amp(seven);
+
+    seven.play();
   }
 
   if (key == '9') {
-    press(277);
+    nine = new p5.Envelope();
+    nine.setADSR(0, keySustain, 0.2, 0);
+    nine.setRange(vol, 0);
+    nine.play();
+
+    ninew = new p5.Oscillator();
+    ninew.setType(type);
+    ninew.start();
+    ninew.freq(277);
+    ninew.amp(nine);
+
+    nine.play();
   }
 
   if (key == '0') {
-    press(311);
+    zero = new p5.Envelope();
+    zero.setADSR(0, keySustain, 0.2, 0);
+    zero.setRange(vol, 0);
+    zero.play();
+
+    zerow = new p5.Oscillator();
+    zerow.setType(type);
+    zerow.start();
+    zerow.freq(311);
+    zerow.amp(zero);
+
+    zero.play();
   }
 
   if (key == 's') {
-    press(369.99);
+    s = new p5.Envelope();
+    s.setADSR(0, keySustain, 0.2, 0);
+    s.setRange(vol, 0);
+    s.play();
+
+    sw = new p5.Oscillator();
+    sw.setType(type);
+    sw.start();
+    sw.freq(369.99);
+    sw.amp(s);
+
+    s.play();
   }
 
   if (key == 'd') {
-    press(415);
+    d = new p5.Envelope();
+    d.setADSR(0, keySustain, 0.2, 0);
+    d.setRange(vol, 0);
+    d.play();
+
+    dw = new p5.Oscillator();
+    dw.setType(type);
+    dw.start();
+    dw.freq(415);
+    dw.amp(d);
+
+    d.play();
   }
 
   if (key == 'f') {
-    press(466);
+    f = new p5.Envelope();
+    f.setADSR(0, keySustain, 0.2, 0);
+    f.setRange(vol, 0);
+    f.play();
+
+    fw = new p5.Oscillator();
+    fw.setType(type);
+    fw.start();
+    fw.freq(466);
+    fw.amp(f);
+
+    f.play();
   }
 
   if (key == 'h') {
-    press(554);
+    h = new p5.Envelope();
+    h.setADSR(0, keySustain, 0.2, 0);
+    h.setRange(vol, 0);
+    h.play();
+
+    hw = new p5.Oscillator();
+    hw.setType(type);
+    hw.start();
+    hw.freq(554);
+    hw.amp(h);
+
+    h.play();
   }
 
   if (key == 'j') {
-    press(622);
+    j = new p5.Envelope();
+    j.setADSR(0, keySustain, 0.2, 0);
+    j.setRange(vol, 0);
+    j.play();
+
+    jw = new p5.Oscillator();
+    jw.setType(type);
+    jw.start();
+    jw.freq(622);
+    jw.amp(j);
+
+    j.play();
   }
 
   if (key == 'l') {
-    press(739.99);
+    l = new p5.Envelope();
+    l.setADSR(0, keySustain, 0.2, 0);
+    l.setRange(vol, 0);
+    l.play();
+
+    lw = new p5.Oscillator();
+    lw.setType(type);
+    lw.start();
+    lw.freq(739.99);
+    lw.amp(l);
+
+    l.play();
   }
 
   if (key == ';') {
-    press(830);
+    semicolin = new p5.Envelope();
+    semicolin.setADSR(0, keySustain, 0.2, 0);
+    semicolin.setRange(vol, 0);
+    semicolin.play();
+
+    semicolinw = new p5.Oscillator();
+    semicolinw.setType(type);
+    semicolinw.start();
+    semicolinw.freq(830);
+    semicolinw.amp(semicolin);
+
+    semicolin.play();
   }
 
   if (key == '\'') {
-    press(932);
+    quote = new p5.Envelope();
+    quote.setADSR(0, keySustain, 0.2, 0);
+    quote.setRange(vol, 0);
+    quote.play();
+
+    quotew = new p5.Oscillator();
+    quotew.setType(type);
+    quotew.start();
+    quotew.freq(932);
+    quotew.amp(quote);
+
+    quote.play();
   }
 }
 

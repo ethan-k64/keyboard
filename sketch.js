@@ -23,6 +23,7 @@ function setup() {
     env[i].setADSR(0, keySustain, 0.2, 0);
     env[i].setRange(vol, 0);
     osc.push(new p5.Oscillator());
+    osc[i].setType(type);
     osc[i].amp(env[i]);
   }
 }
@@ -33,6 +34,7 @@ function draw() {
   for (let i = 0; i < keys; i++) {
     env[i].setADSR(0, keySustain, 0.2, 0);
     env[i].setRange(vol, 0);
+    osc[i].setType(type);
     osc[i].amp(env[i]);
   }
   

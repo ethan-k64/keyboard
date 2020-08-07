@@ -13,19 +13,19 @@ let board = function(p) {
     cnv.position(displayWidth / 2 - width / 2, 0);
 
     sineButton = p.createButton("Sine");
-    sineButton.position(1000, 75);
+    sineButton.position(850 / 1.25 + (displayWidth - width) / 2, 75);
     sineButton.mousePressed(sineType);
 
     triangleButton = p.createButton("Triangle");
-    triangleButton.position(1100, 75);
+    triangleButton.position(960 / 1.25 + (displayWidth - width) / 2, 75);
     triangleButton.mousePressed(triangleType);
 
     sawtoothButton = p.createButton("Sawtooth");
-    sawtoothButton.position(1200, 75);
+    sawtoothButton.position(1075 / 1.25 + (displayWidth - width) / 2, 75);
     sawtoothButton.mousePressed(sawtoothType);
 
     squareButton = p.createButton("Square");
-    squareButton.position(1300, 75);
+    squareButton.position(1200 / 1.25 + (displayWidth - width) / 2, 75);
     squareButton.mousePressed(squareType);
 
     p.background(51);
@@ -82,7 +82,7 @@ let board = function(p) {
     p.textSize(20);
     p.translate(205, 25);
     p.text("Volume", 0, 0);
-    p.text("Voice Select", 600, 0);
+    p.text("Voice Select", 585, 0);
     p.text("Sustain", 225, 0);
     p.pop();
 
@@ -93,10 +93,10 @@ let board = function(p) {
     p.pop();
 
     slider = p.createSlider(0.01, 1, 0.5, 0.01);
-    slider.position(500, 40);
+    slider.position(215 / 1.25 + (displayWidth - width) / 2, 40);
     
     sslider = p.createSlider(0.15, 2, 0.3, 0.01);
-    sslider.position(730, 40);
+    sslider.position(495 / 1.25 + (displayWidth - width) / 2, 40);
   }
 }
 

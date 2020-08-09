@@ -7,12 +7,14 @@ Please Don't Steal My Code
 const len = 21;
 const keys = 36;
 let type = "sine";
+let root = 60;
 
 let env = [];
 let osc = [];
 
 let vol = 0;
 let keySustain;
+let transposeVal;
 
 function setup() {
   const cnv = createCanvas(len * 60, 300);
@@ -47,211 +49,212 @@ function keyPressed() {
   // White Keys---------------------------------------------------------------------------------
   if (key == 'q') {
     osc[0].start();
-    osc[0].freq(130);
+    osc[0].freq(midiToFreq(root - 12));
     env[0].play();
   }
 
   if (key == 'w') {
     osc[1].start();
-    osc[1].freq(146);
+    osc[1].freq(midiToFreq(root - 10));
     env[1].play();
   }
 
   if (key == 'e') {
     osc[2].start();
-    osc[2].freq(164);
+    osc[2].freq(midiToFreq(root - 8));
     env[2].play();
   }
 
   if (key == 'r') {
     osc[3].start();
-    osc[3].freq(174);
+    osc[3].freq(midiToFreq(root - 7));
     env[3].play();
   }
 
   if (key == 't') {
     osc[4].start();
-    osc[4].freq(196);
+    osc[4].freq(midiToFreq(root - 5));
     env[4].play();
   }
 
   if (key == 'y') {
     osc[5].start();
-    osc[5].freq(220);
+    osc[5].freq(midiToFreq(root - 3));
     env[5].play();
   }
 
   if (key == 'u') {
     osc[6].start();
-    osc[6].freq(246);
+    osc[6].freq(midiToFreq(root - 1));
     env[6].play();
   }
 
   if (key == 'i') {
     osc[7].start();
-    osc[7].freq(261);
+    osc[7].freq(midiToFreq(root));
     env[7].play();
   }
 
   if (key == 'o') {
     osc[8].start();
-    osc[8].freq(293);
+    osc[8].freq(midiToFreq(root + 2));
     env[8].play();
   }
 
   if (key == 'p') {
     osc[9].start();
-    osc[9].freq(329);
+    osc[9].freq(midiToFreq(root + 4));
     env[9].play();
   }
 
   if (key == 'z') {
     osc[10].start();
-    osc[10].freq(349);
+    osc[10].freq(midiToFreq(root + 5));
     env[10].play();
   }
 
   if (key == 'x') {
     osc[11].start();
-    osc[11].freq(391);
+    osc[11].freq(midiToFreq(root + 7));
     env[11].play();
   }
 
   if (key == 'c') {
     osc[12].start();
-    osc[12].freq(440);
+    osc[12].freq(midiToFreq(root + 9));
     env[12].play();
   }
 
   if (key == 'v') {
     osc[13].start();
-    osc[13].freq(493);
+    osc[13].freq(midiToFreq(root + 11));
     env[13].play();
   }
 
   if (key == 'b') {
     osc[14].start();
-    osc[14].freq(523);
+    osc[14].freq(midiToFreq(root + 12));
     env[14].play();
   }
 
   if (key == 'n') {
     osc[15].start();
-    osc[15].freq(587);
+    osc[15].freq(midiToFreq(root + 14));
     env[15].play();
   }
 
   if (key == 'm') {
     osc[16].start();
-    osc[16].freq(659);
+    osc[16].freq(midiToFreq(root + 16));
     env[16].play();
   }
 
   if (key == ',') {
     osc[17].start();
-    osc[17].freq(698);
+    osc[17].freq(midiToFreq(root + 17));
     env[17].play();
   }
 
   if (key == '.') {
     osc[18].start();
-    osc[18].freq(783);
+    osc[18].freq(midiToFreq(root + 19));
     env[18].play();
   }
 
   if (key == '/') {
     osc[19].start();
-    osc[19].freq(880);
+    osc[19].freq(midiToFreq(root + 21));
     env[19].play();
   }
 
+  // Black Keys---------------------------------------------------------------------------------
   if (key == '2') {
     osc[20].start();
-    osc[20].freq(138);
+    osc[20].freq(midiToFreq(root - 11));
     env[20].play();
   }
 
   if (key == '3') {
     osc[21].start();
-    osc[21].freq(155);
+    osc[21].freq(midiToFreq(root - 9));
     env[21].play();
   }
 
   if (key == '5') {
     osc[22].start();
-    osc[22].freq(185);
+    osc[22].freq(midiToFreq(root - 6));
     env[22].play();
   }
 
   if (key == '6') {
     osc[23].start();
-    osc[23].freq(207);
+    osc[23].freq(midiToFreq(root - 4));
     env[23].play();
   }
 
   if (key == '7') {
     osc[24].start();
-    osc[24].freq(233);
+    osc[24].freq(midiToFreq(root - 2));
     env[24].play();
   }
 
   if (key == '9') {
     osc[25].start();
-    osc[25].freq(277);
+    osc[25].freq(midiToFreq(root + 1));
     env[25].play();
   }
 
   if (key == '0') {
     osc[26].start();
-    osc[26].freq(311);
+    osc[26].freq(midiToFreq(root + 3));
     env[26].play();
   }
 
   if (key == 's') {
     osc[27].start();
-    osc[27].freq(369.99);
+    osc[27].freq(midiToFreq(root + 6));
     env[27].play();
   }
 
   if (key == 'd') {
     osc[28].start();
-    osc[28].freq(415);
+    osc[28].freq(midiToFreq(root + 8));
     env[28].play();
   }
 
   if (key == 'f') {
     osc[29].start();
-    osc[29].freq(466);
+    osc[29].freq(midiToFreq(root + 10));
     env[29].play();
   }
 
   if (key == 'h') {
     osc[30].start();
-    osc[30].freq(554);
+    osc[30].freq(midiToFreq(root + 13));
     env[30].play();
   }
 
   if (key == 'j') {
     osc[31].start();
-    osc[31].freq(622);
+    osc[31].freq(midiToFreq(root + 15));
     env[31].play();
   }
 
   if (key == 'l') {
     osc[32].start();
-    osc[32].freq(739.99);
+    osc[32].freq(midiToFreq(root + 18));
     env[32].play();
   }
 
   if (key == ';') {
     osc[33].start();
-    osc[33].freq(830);
+    osc[33].freq(midiToFreq(root + 20));
     env[33].play();
   }
 
   if (key == '\'') {
     osc[34].start();
-    osc[34].freq(932);
+    osc[34].freq(midiToFreq(root + 22));
     env[34].play();
   }
 }
@@ -362,6 +365,10 @@ function drawKeys() {
   text(";", 1136, 50);
   text("'", 1197, 50);
   pop();
+}
+
+function inputEvent() {
+  root = 60 + Number(this.value());
 }
 
 function sineType() {

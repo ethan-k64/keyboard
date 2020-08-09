@@ -2,6 +2,7 @@
 let board = function(p) {
   let slider;
   let sslider;
+  let transposeInput;
 
   let sineButton;
   let triangleButton;
@@ -82,6 +83,7 @@ let board = function(p) {
     p.textSize(20);
     p.translate(205, 25);
     p.text("Volume", 0, 0);
+    p.text("Transpose", -10, 75);
     p.text("Voice Select", 585, 0);
     p.text("Sustain", 225, 0);
     p.pop();
@@ -97,6 +99,14 @@ let board = function(p) {
     
     sslider = p.createSlider(0.15, 2, 0.3, 0.01);
     sslider.position(495 / 1.25 + (displayWidth - width) / 2, 40);
+    
+    transposeInput = p.createInput();
+    transposeInput.position(250 / 1.25 + (displayWidth - width) / 2, 125);
+    transposeInput.attribute("type", "number");
+    transposeInput.attribute("step", "1");
+    transposeInput.attribute("min", "-12");
+    transposeInput.attribute("max", "12");
+    transposeInput.changed(inputEvent);
   }
 }
 

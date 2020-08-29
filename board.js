@@ -83,7 +83,7 @@ let board = function(p) {
     p.textSize(20);
     p.translate(205, 25);
     p.text("Volume", 0, 0);
-    p.text("Transpose", -10, 75);
+    p.text("Transpose", -15, 75);
     p.text("Voice Select", 585, 0);
     p.text("Sustain", 225, 0);
     p.pop();

@@ -11,7 +11,8 @@ let board = function(p) {
 
   p.setup = function() {
     const cnv = p.createCanvas(len * 60, 175);
-    cnv.position(displayWidth / 2 - width / 2, 0);
+    cnv.style("margin", "auto");
+    //cnv.position(displayWidth / 2 - width / 2, 0);
 
     sineButton = p.createButton("Sine");
     sineButton.position(850 / 1.25 + (displayWidth - width) / 2, 75);

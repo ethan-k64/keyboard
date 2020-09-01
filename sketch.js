@@ -18,7 +18,7 @@ let transposeVal;
 
 function setup() {
   const cnv = createCanvas(len * 60, 300);
-  cnv.style("margin", "175px auto 0px auto");
+  cnv.position(displayWidth / 2 - width / 2, 175);
   
   for (let i = 0; i < keys; i++) {
     env.push(new p5.Envelope());
